@@ -130,7 +130,8 @@
                         </div>
                         <div class="modal-container">
                             <label for="coffeeAmount">Размер стакана</label>
-                            <select name="amount" id="coffeeAmount" >
+                            <select name="amount" id="coffeeAmount">
+                                <option> </option>
                                 <option>Small</option>
                                 <option>Medium</option>
                                 <option>Large</option>
@@ -141,7 +142,7 @@
                         <div class="modal-container">
                             <label for="reduceCoffeeSugar" class="modalLabel">Добавить сахар</label>
                             <button id="reduceCoffeeSugar" class="btn btn-secondary">-</button>
-                            <input type="text" value="0" class="sugarInput">
+                            <input type="text" value="0" class="sugarInput" id="reduceSugar">
                             <button id="increaseCoffeeSugar" class="btn btn-primary">+</button>
                         </div>
                         <div class="modal-container checkbox-container" id="checkCoffee">

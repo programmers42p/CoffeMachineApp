@@ -40,9 +40,20 @@ function specificCoffee(){
 
     let coffeeLemon = document.getElementById("coffeeLemon");
     coffeeLemon.setAttribute("disabled", "disabled");
-
-    c
 }
+function reduceSugar() {
+    let reduceSugar = document.getElementById("reduceSugar");
+}
+function increaseSugar() {
+    let reduceSugar = document.getElementById("reduceSugar");
+}
+
+let reduceCoffeeSugar = document.getElementById("reduceCoffeeSugar");
+reduceCoffeeSugar.onclick = reduceSugar;
+let increaseCoffeeSugar = document.getElementById("increaseCoffeeSugar");
+increaseCoffeeSugar.onclick = increaseSugar;
+
+
 let espresso = document.getElementById("espresso");
 espresso.onclick = specificCoffee;
 
