@@ -1,10 +1,12 @@
 export class Drink {
-    constructor(name,strongth,amount){
+    constructor(name,amount,temperature,water){
         this.amount = amount;
         this.name = name;
-        this.strongth = strongth;
+        this.temperature = temperature;
+        this.water = water;
     }
+    water;
+    temperature;
     name;
-    strongth;
     amount;
 }

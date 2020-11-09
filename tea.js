@@ -1,45 +1,17 @@
-import {drink} from './drink'
-class Tea extends drink{
+import {Drink} from './drink'
+export class Tea extends Drink{
 
-    constructor(name,strongth,amount,supplier,sugarAmount,mintAmount,lemonAmount){
-        super(name,strongth,amount);
-        this.supplier = supplier;
+    constructor(name,temperature,amount,sugarAmount,mint,lemon,water,sort,ice){
+        super(name,amount,temperature,water);
         this.sugarAmount = sugarAmount;
-        this.mintAmount = mintAmount;
-        this.lemonAmount = lemonAmount;
+        this.mint = mint;
+        this.lemon = lemon;
+        this.ice = ice;
+        this.sort = sort;
     }
-    supplier;
     sugarAmount;
-    mintAmount;
-    lemonAmount;
-
-
-    addLemon(){
-
-    };
-    addIce(){
-
-    };
-    addSugar(){
-
-    };
-    GreenTea(){
-
-    };
-    YellowTea(){
-
-    };
-    BlackTea(){
-
-    };
-    RedTea(){
-
-    };
-    WhiteTea(){
-
-    };
-    AddMint(){
-
-    };
-
+    mint;
+    lemon;
+    ice;
+    sort =["Black","White","Red","Yellow","Grey","Green"];
 }
