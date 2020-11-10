@@ -1,8 +1,8 @@
 import {Drink} from './drink.js'
 export class Tea extends Drink{
 
-    constructor(name,temperature,amount,sugarAmount,mint,lemon,water,sort,ice){
-        super(name,amount,temperature,water);
+    constructor(temperature,amount,sugarAmount,mint,lemon,water,sort,ice){
+        super(amount,temperature,water);
         this.sugarAmount = sugarAmount;
         this.mint = mint;
         this.lemon = lemon;
