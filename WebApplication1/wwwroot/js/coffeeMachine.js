@@ -56,18 +56,6 @@ function specificCoffee(){
     let coffeeLemon = document.getElementById("coffeeLemon");
     coffeeLemon.setAttribute("disabled", "disabled");
 }
-function reduceSugar() {
-    let reduceSugar = document.getElementById("reduceSugar");
-}
-function increaseSugar() {
-    let reduceSugar = document.getElementById("reduceSugar");
-}
-
-let reduceCoffeeSugar = document.getElementById("reduceCoffeeSugar");
-reduceCoffeeSugar.onclick = reduceSugar;
-let increaseCoffeeSugar = document.getElementById("increaseCoffeeSugar");
-increaseCoffeeSugar.onclick = increaseSugar;
-
 
 let espresso = document.getElementById("espresso");
 espresso.onclick = specificCoffee;
@@ -155,6 +143,49 @@ function selectTea(){
 }
 let teaPour = document.getElementById("teaPour");
 teaPour.onclick = selectTea;
+//Добавление сахара в чай
+function reduceSugar() {
+    
+    let sugar = document.getElementById("teaSugar");
+    if (sugar.value != 0) {
+        sugar.value = +sugar.value - 1;
+    }
+    
+}
+let reduceSugarTeaButton = document.getElementById("reduceSugar");
+reduceSugarTeaButton.onclick = reduceSugar;
+function increaseSugar() {
+
+    let sugar = document.getElementById("teaSugar");
+    if (sugar.value != 4) {
+        sugar.value = +sugar.value + 1;
+    }
+
+}
+let increaseSugarTeaButton = document.getElementById("increaseSugar");
+increaseSugarTeaButton.onclick = increaseSugar;
+//Добавление сахара в коффе
+function reduceSugarCoffee() {
+
+    let sugar = document.getElementById("coffeeSugar");
+    if (sugar.value != 0) {
+        sugar.value = +sugar.value - 1;
+    }
+
+}
+let reduceSugarCoffeeButton = document.getElementById("reduceCoffeeSugar");
+reduceSugarCoffeeButton.onclick = reduceSugarCoffee;
+function increaseSugarCoffee() {
+
+    let sugar = document.getElementById("coffeeSugar");
+    if (sugar.value != 4) {
+        sugar.value = +sugar.value + 1;
+    }
+
+}
+let increaseSugarCoffeeButton = document.getElementById("increaseCoffeeSugar");
+increaseSugarCoffeeButton.onclick = increaseSugarCoffee;
+
 
 
 
