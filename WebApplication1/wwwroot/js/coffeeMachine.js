@@ -7,6 +7,9 @@ class CoffeeMachine {
 
         let coffeeButton = document.getElementById("coffeeButton");
         coffeeButton.removeAttribute("disabled");
+
+        let anim = document.getElementById("anim");
+        anim.setAttribute("hidden", "hidden");
         
     }
     stop(){
@@ -16,9 +19,13 @@ class CoffeeMachine {
         let coffeeButton = document.getElementById("coffeeButton");
         coffeeButton.setAttribute("disabled", "disabled");
 
-    }
-    pour(){
+        let anim = document.getElementById("anim");
+        anim.setAttribute("hidden","hidden");
 
+    }
+    pour() {
+        let anim = document.getElementById("anim");
+        anim.setAttribute("hidden", "hidden");
     }
 
 }
@@ -28,6 +35,10 @@ let statusStart = document.getElementById("start");
 statusStart.onclick = machine.start;
 let statusStop = document.getElementById("stop");
 statusStop.onclick = machine.stop;
+let cupOfTea = document.getElementById("teaButton");
+cupOfTea.onclick = machine.pour();
+let cupOfCoffee = document.getElementById("coffeeButton");
+cupOfCoffee.onclick = machine.pour();
 
 function customCoffee(){
     let coffeAmount = document.getElementById("coffeeAmount");
@@ -77,43 +88,57 @@ frappe.onclick = specificCoffee;
 //Выбор коффе из предложенных шаблонов
 function selectCoffee() {
     let coffee = new Coffee();
-    let coffeePour = document.getElementById("coffeePour");
 
     if (frappe.checked) {
+        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
         coffee.lemon = false;
         coffee.frappe();
         coffee.water = false;
+        let anim = document.getElementById("anim");
+        anim.removeAttribute("hidden");
+        anim.title = `Temperature: ${coffee.temperature}, Sugar amount: ${coffee.sugarAmount}, Amount: ${coffee.amount}${coffee.milk == false ? '' : ', With milk'}${coffee.ice == false ? '' : ', With ice'}${coffee.lemon == false ? '' : ', With lemon'}`;
         console.log(coffee);
-        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
     } else if (latte.checked) {
+        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
         coffee.ice = false;
         coffee.lemon = false;
         coffee.latte();
         coffee.water = false;
+        let anim = document.getElementById("anim");
+        anim.removeAttribute("hidden");
+        anim.title = `Temperature: ${coffee.temperature}, Sugar amount: ${coffee.sugarAmount}, Amount: ${coffee.amount}${coffee.milk == false ? '' : ', With milk'}${coffee.ice == false ? '' : ', With ice'}${coffee.lemon == false ? '' : ', With lemon'}`;
         console.log(coffee);
-        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
     } else if (americano.checked) {
+        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
         coffee.ice = false;
         coffee.lemon = false;
         coffee.milk = false;
         coffee.americano();
+        let anim = document.getElementById("anim");
+        anim.removeAttribute("hidden");
+        anim.title = `Temperature: ${coffee.temperature}, Sugar amount: ${coffee.sugarAmount}, Amount: ${coffee.amount}${coffee.milk == false ? '' : ', With milk'}${coffee.ice == false ? '' : ', With ice'}${coffee.lemon == false ? '' : ', With lemon'}, Water:${coffee.water}`;
         console.log(coffee);
-        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
     } else if (cappuccino.checked) {
+        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
         coffee.ice = false;
         coffee.lemon = false;
         coffee.cappuccino();
         coffee.water = false;
+        let anim = document.getElementById("anim");
+        anim.removeAttribute("hidden");
+        anim.title = `Temperature: ${coffee.temperature}, Sugar amount: ${coffee.sugarAmount}, Amount: ${coffee.amount}${coffee.milk == false ? '' : ', With milk'}${coffee.ice == false ? '' : ', With ice'}${coffee.lemon == false ? '' : ', With lemon'}`;
         console.log(coffee);
-        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
     } else if (espresso.checked) {
+        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
         coffee.ice = false;
         coffee.lemon = false;
         coffee.milk = false;
         coffee.espresso();
         coffee.water = false;
+        let anim = document.getElementById("anim");
+        anim.removeAttribute("hidden");
+        anim.title = `Temperature: ${coffee.temperature}, Sugar amount: ${coffee.sugarAmount}, Amount: ${coffee.amount}${coffee.milk == false ? '' : ', With milk'}${coffee.ice == false ? '' : ', With ice'}${coffee.lemon == false ? '' : ', With lemon'}`;
         console.log(coffee);
-        coffee.sugarAmount = document.getElementById("coffeeSugar").value;
     } else if (custom.checked) {
         coffee.sugarAmount = document.getElementById("coffeeSugar").value;
         coffee.amount = document.getElementById("coffeeAmount").value;
@@ -122,13 +147,16 @@ function selectCoffee() {
         coffee.lemon = document.getElementById("coffeeLemon").checked;
         coffee.temperature = 90;
         coffee.water = false;
+        let anim = document.getElementById("anim");
+        anim.removeAttribute("hidden");
+        anim.title = `Temperature: ${coffee.temperature}, Sugar amount: ${coffee.sugarAmount}, Amount: ${coffee.amount}${coffee.milk == false ? '' : ', With milk'}${coffee.ice == false ? '' : ', With ice'}${coffee.lemon == false ? '' : ', With lemon'}`;
         console.log(coffee);
         
     }
 }
 let coffeePour = document.getElementById("coffeePour");
 coffeePour.onclick = selectCoffee;
-function selectTea(){
+function selectTea() {
     let tea = new Tea;
     tea.temperature = 90;
     tea.sugarAmount = document.getElementById("teaSugar").value;
@@ -138,7 +166,9 @@ function selectTea(){
     tea.ice = document.getElementById("teaIce").checked;
     tea.lemon = document.getElementById("teaLemon").checked;
     tea.water = false;
-    
+    let anim = document.getElementById("anim");
+    anim.removeAttribute("hidden");
+    anim.title = `Temperature: ${tea.temperature}, Sugar amount: ${tea.sugarAmount}, Sort: ${tea.sort}, Amount: ${tea.amount}${tea.mint == false ? '' : ', With mint'}${tea.ice == false ? '':', With ice'}${tea.lemon == false ? '': ', With lemon'}`;
     console.log(tea);
 }
 let teaPour = document.getElementById("teaPour");

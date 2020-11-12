@@ -16,29 +16,29 @@ export class Coffee extends Drink{
 
     espresso(){
         this.temperature = 90;
-        this.amount = 35;
+        this.amount = "Small";
     };
     cappuccino(){
         this.temperature = 90;
-        this.amount = 75;
+        this.amount = "Medium";
         this.milk = true;
 
     };
     americano(){
         this.temperature = 90;
-        this.amount = 35;
+        this.amount = "Small";
         this.water = 50;
 
     };
     latte(){
         this.temperature = 90;
-        this.amount = 75;
+        this.amount = "Medium";
         this.milk = true;
 
     };
     frappe(){
         this.temperature = 90;
-        this.amount = 100;
+        this.amount = "Large";
         this.ice = true;
         this.milk = true;
 
