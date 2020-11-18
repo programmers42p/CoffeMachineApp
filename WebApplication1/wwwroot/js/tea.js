@@ -1,7 +1,7 @@
 import {Drink} from './drink.js'
 export class Tea extends Drink{
 
-    constructor(temperature,amount,sugarAmount,mint,lemon,water,sort,ice){
+    constructor(temperature,amount,sugarAmount,mint,lemon,water,sort,ice,price){
         super(amount,temperature,water);
         this.sugarAmount = sugarAmount;
         this.mint = mint;
@@ -13,5 +13,5 @@ export class Tea extends Drink{
     mint;
     lemon;
     ice;
-    sort =["Black","White","Red","Yellow","Grey","Green"];
+    sort;
 }

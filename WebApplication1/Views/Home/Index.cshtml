@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <script src="~/js/coffeeMachine.js" type="module">
     </script>
     <title>Coffe</title>
@@ -14,6 +14,11 @@
     <div id="fbuttons">
         <input class=" btn btn-primary" type="button" value="Start" id="start">
         <input class=" btn btn-primary" type="button" value="Stop" id="stop">
+        <div id="container_account">
+            <label for="account">Баланс</label>
+            <input type="text" readonly value="5000" id="account" />
+        </div>
+        
     </div>
     <div id="drinks">
         <!-- Button trigger modal -->
@@ -47,12 +52,12 @@
                         <div class="modal-container">
                             <label for="teaAmount">Сорт чая</label>
                             <select name="amount" id="teaSort">
-                                <option>Чёрный</option>
-                                <option>Белый</option>
-                                <option>Красный</option>
-                                <option>Жёлтый</option>
-                                <option>Серый</option>
-                                <option>Зелёный</option>
+                                <option>Black</option>
+                                <option>White</option>
+                                <option>Red</option>
+                                <option>Yellow</option>
+                                <option>Grey</option>
+                                <option>Green</option>
                             </select>
                         </div>
                         <div class="modal-container">
@@ -76,6 +81,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
                         <button type="button" class="btn btn-primary" id="teaPour" data-dismiss="modal">Налить</button>
@@ -136,7 +142,7 @@
                         <div class="modal-container">
                             <label for="reduceCoffeeSugar" class="modalLabel">Добавить сахар</label>
                             <button id="reduceCoffeeSugar" class="btn btn-secondary">-</button>
-                            <input type="text" value="0" class="sugarInput" id="coffeeSugar">
+                            <input type="text" value="0" class="sugarInput" id="coffeeSugar" readonly>
                             <button id="increaseCoffeeSugar" class="btn btn-primary">+</button>
                         </div>
                         <div class="modal-container checkbox-container" id="checkCoffee">

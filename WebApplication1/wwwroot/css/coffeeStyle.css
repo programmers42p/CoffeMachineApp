@@ -141,3 +141,17 @@ body {
 .loader{
     margin-left: 160px;
 }
+#container_account {
+    text-align: right;
+}
+#account{
+    margin-right: 20px;
+    width: 60px;
+}
+#price{
+    margin-right: 200px;
+}
+.contener_price_coffee{
+    text-align: left;
+}
+
