@@ -311,6 +311,23 @@ function increaseSugarCoffee() {
 }
 let increaseSugarCoffeeButton = document.getElementById("increaseCoffeeSugar");
 increaseSugarCoffeeButton.onclick = increaseSugarCoffee;
+//Пополнение баланса
+function payplus() {
+    let account = document.getElementById("account");
+    if (account.value > "5000" || account.value == "5000") {
+
+    }
+    else {
+        
+        account.value = +account.value + 100
+        if (account.value > "5000") {
+            account.value = "5000";
+        }
+    }
+    
+}
+let pay = document.getElementById("pay");
+pay.onclick = payplus;
 
 
 
