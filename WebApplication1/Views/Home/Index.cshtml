@@ -11,174 +11,173 @@
     <title>Coffe</title>
 </head>
 <body>
-    <div id="fbuttons">
-        <input class=" btn btn-primary" type="button" value="Start" id="start">
-        <input class=" btn btn-primary" type="button" value="Stop" id="stop">
-        <div id="container_account">
-            <label for="account">Баланс</label>
-            <input type="text" readonly value="5000" id="account"/>
-            <button type="button" class="btn btn-primary drink" data-toggle="modal" id="pay">
-                +100
+    <div class="span-panel">
+        <div id="fbuttons">
+            <input class=" btn btn-primary" type="button" value="Start" id="start">
+            <input class=" btn btn-primary" type="button" value="Stop" id="stop">
+            <div id="container_account">
+                <label for="account" style="color: white;">Баланс</label>
+                <input type="text" readonly value="50" id="account" style="border-radius: 5px">
+                <button type="button" class="btn btn-primary drink" data-toggle="modal" id="pay">
+                    +100
+                </button>
+            </div>
+        </div>
+        <div id="drinks">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary drink" data-toggle="modal" data-target="#teaWindow" disabled id="teaButton">
+                Чай
             </button>
+            <button type="button" class="btn btn-primary drink" data-toggle="modal" data-target="#coffeeWindow" disabled id="coffeeButton">
+                Кофе
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="teaWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="teaModal">Заказать чай</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-container">
+                                <label for="teaAmount">Размер стакана</label>
+                                <select name="amount" id="teaAmount">
+                                    <option>Small</option>
+                                    <option>Medium</option>
+                                    <option>Large</option>
+                                    <option>Extra</option>
+                                    <option>Giant</option>
+                                </select>
+                            </div>
+                            <div class="modal-container">
+                                <label for="teaAmount">Сорт чая</label>
+                                <select name="amount" id="teaSort">
+                                    <option>Black</option>
+                                    <option>White</option>
+                                    <option>Red</option>
+                                    <option>Yellow</option>
+                                    <option>Grey</option>
+                                    <option>Green</option>
+                                </select>
+                            </div>
+                            <div class="modal-container">
+                                <label for="reduceSugar" class="modalLabel">Добавить сахар</label>
+                                <button id="reduceSugar" class="btn btn-secondary">-</button>
+                                <input type="text" value="0" class="sugarInput" id="teaSugar" readonly>
+                                <button id="increaseSugar" class="btn btn-primary">+</button>
+                            </div>
+                            <div class="modal-container checkbox-container">
+                                <div class="parts">
+                                    <label for="teaMint">&#127811;</label>
+                                    <input type="checkbox" id="teaMint" class="checkbox">
+                                </div>
+                                <div class="parts">
+                                    <label for="teaLemon">&#127819;</label>
+                                    <input type="checkbox" id="teaLemon" class="checkbox">
+                                </div>
+                                <div class="parts">
+                                    <label for="teaIce">&#x1F9CA;</label>
+                                    <input type="checkbox" id="teaIce" class="checkbox">
+                                </div>
+                            </div>
+                        </div>
 
-        </div>
-    </div>
-    <div id="drinks">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary drink" data-toggle="modal" data-target="#teaWindow" disabled id="teaButton">
-            Чай
-        </button>
-        <button type="button" class="btn btn-primary drink" data-toggle="modal" data-target="#coffeeWindow" disabled id="coffeeButton">
-            Кофе
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="teaWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="teaModal">Заказать чай</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-container">
-                            <label for="teaAmount">Размер стакана</label>
-                            <select name="amount" id="teaAmount">
-                                <option>Small</option>
-                                <option>Medium</option>
-                                <option>Large</option>
-                                <option>Extra</option>
-                                <option>Giant</option>
-                            </select>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                            <button type="button" class="btn btn-primary" id="teaPour" data-dismiss="modal">Налить</button>
                         </div>
-                        <div class="modal-container">
-                            <label for="teaAmount">Сорт чая</label>
-                            <select name="amount" id="teaSort">
-                                <option>Black</option>
-                                <option>White</option>
-                                <option>Red</option>
-                                <option>Yellow</option>
-                                <option>Grey</option>
-                                <option>Green</option>
-                            </select>
-                        </div>
-                        <div class="modal-container">
-                            <label for="reduceSugar" class="modalLabel">Добавить сахар</label>
-                            <button id="reduceSugar" class="btn btn-secondary">-</button>
-                            <input type="text" value="0" class="sugarInput" id="teaSugar" readonly>
-                            <button id="increaseSugar" class="btn btn-primary">+</button>
-                        </div>
-                        <div class="modal-container checkbox-container">
-                            <div class="parts">
-                                <label for="teaMint">&#127811;</label>
-                                <input type="checkbox" id="teaMint" class="checkbox">
-                            </div>
-                            <div class="parts">
-                                <label for="teaLemon">&#127819;</label>
-                                <input type="checkbox" id="teaLemon" class="checkbox">
-                            </div>
-                            <div class="parts">
-                                <label for="teaIce">&#x1F9CA;</label>
-                                <input type="checkbox" id="teaIce" class="checkbox">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-                        <button type="button" class="btn btn-primary" id="teaPour" data-dismiss="modal">Налить</button>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="coffeeWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="coffeeModal">Заказать кофе</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="coffeeChoose">
-                            <form>
-                                <div class="coffeeRadio">
-                                    <label for="frappe">Frappe</label>
-                                    <input type="radio" name="coffee" id="frappe">
-                                </div>
-                                <div class="coffeeRadio">
-                                    <label for="latte">Latte</label>
-                                    <input type="radio" name="coffee" id="latte">
-                                </div>
-                                <div class="coffeeRadio">
-                                    <label for="americano">Americano</label>
-                                    <input type="radio" name="coffee" id="americano">
-                                </div>
-                                <div class="coffeeRadio">
-                                    <label for="cappuccino">Cappuccino</label>
-                                    <input type="radio" name="coffee" id="cappuccino">
-                                </div>
-                                <div class="coffeeRadio">
-                                    <label for="espresso">Espresso</label>
-                                    <input type="radio" name="coffee" id="espresso">
-                                </div>
-                                <div class="coffeeRadio">
-                                    <label for="custom">Custom</label>
-                                    <input type="radio" name="coffee" checked id="custom">
-                                </div>
-                            </form>
+            <!-- Modal -->
+            <div class="modal fade" id="coffeeWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="coffeeModal">Заказать кофе</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="modal-container">
-
-                            <label for="coffeeAmount">Размер стакана</label>
-                            <select name="amount" id="coffeeAmount">
-                                <option>Small</option>
-                                <option>Medium</option>
-                                <option>Large</option>
-                                <option>Extra</option>
-                                <option>Giant</option>
-                            </select>
-                        </div>
-                        <div class="modal-container">
-                            <label for="reduceCoffeeSugar" class="modalLabel">Добавить сахар</label>
-                            <button id="reduceCoffeeSugar" class="btn btn-secondary">-</button>
-                            <input type="text" value="0" class="sugarInput" id="coffeeSugar" readonly>
-                            <button id="increaseCoffeeSugar" class="btn btn-primary">+</button>
-                        </div>
-                        <div class="modal-container checkbox-container" id="checkCoffee">
-                            <div class="parts">
-                                <label for="coffeeMilk">&#129371;</label>
-                                <input type="checkbox" id="coffeeMilk" class="checkbox">
+                        <div class="modal-body">
+                            <div class="coffeeChoose">
+                                <form>
+                                    <div class="coffeeRadio">
+                                        <label for="frappe">Frappe</label>
+                                        <input type="radio" name="coffee" id="frappe">
+                                    </div>
+                                    <div class="coffeeRadio">
+                                        <label for="latte">Latte</label>
+                                        <input type="radio" name="coffee" id="latte">
+                                    </div>
+                                    <div class="coffeeRadio">
+                                        <label for="americano">Americano</label>
+                                        <input type="radio" name="coffee" id="americano">
+                                    </div>
+                                    <div class="coffeeRadio">
+                                        <label for="cappuccino">Cappuccino</label>
+                                        <input type="radio" name="coffee" id="cappuccino">
+                                    </div>
+                                    <div class="coffeeRadio">
+                                        <label for="espresso">Espresso</label>
+                                        <input type="radio" name="coffee" id="espresso">
+                                    </div>
+                                    <div class="coffeeRadio">
+                                        <label for="custom">Custom</label>
+                                        <input type="radio" name="coffee" checked id="custom">
+                                    </div>
+                                </form>
                             </div>
-                            <div class="parts">
-                                <label for="coffeeLemon">&#127819;</label>
-                                <input type="checkbox" id="coffeeLemon" class="checkbox">
+                            <div class="modal-container">
+                                <label for="coffeeAmount">Размер стакана</label>
+                                <select name="amount" id="coffeeAmount">
+                                    <option>Small</option>
+                                    <option>Medium</option>
+                                    <option>Large</option>
+                                    <option>Extra</option>
+                                    <option>Giant</option>
+                                </select>
                             </div>
-                            <div class="parts">
-                                <label for="coffeeIce">&#x1F9CA;</label>
-                                <input type="checkbox" id="coffeeIce" class="checkbox">
+                            <div class="modal-container">
+                                <label for="reduceCoffeeSugar" class="modalLabel">Добавить сахар</label>
+                                <button id="reduceCoffeeSugar" class="btn btn-secondary">-</button>
+                                <input type="text" value="0" class="sugarInput" id="coffeeSugar" readonly>
+                                <button id="increaseCoffeeSugar" class="btn btn-primary">+</button>
+                            </div>
+                            <div class="modal-container checkbox-container" id="checkCoffee">
+                                <div class="parts">
+                                    <label for="coffeeMilk">&#129371;</label>
+                                    <input type="checkbox" id="coffeeMilk" class="checkbox">
+                                </div>
+                                <div class="parts">
+                                    <label for="coffeeLemon">&#127819;</label>
+                                    <input type="checkbox" id="coffeeLemon" class="checkbox">
+                                </div>
+                                <div class="parts">
+                                    <label for="coffeeIce">&#x1F9CA;</label>
+                                    <input type="checkbox" id="coffeeIce" class="checkbox">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-                        <button type="button" class="btn btn-primary" id="coffeePour" data-dismiss="modal">Налить</button>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                            <button type="button" class="btn btn-primary" id="coffeePour" data-dismiss="modal">Налить</button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="loader" id="anim" title="">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="cup"><span></span></div>
+            </div>
         </div>
-        <div class="loader" id="anim" title="" >
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div class="cup" ><span></span></div>
-        </div>
-    </div>
-    
+    </div>    
 </body>
 </html>
